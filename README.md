@@ -5,7 +5,6 @@ Blocker Device Frontend is an open-source web app for managing and monitoring Io
 ![Image](https://github.com/user-attachments/assets/4a1147c2-7f3e-4f20-ac97-b612e6eec8b7)
 ![Image](https://github.com/user-attachments/assets/c15191e1-c8a6-466b-9c96-9b092f1c5d25)
 ![Image](https://github.com/user-attachments/assets/f0b6d4a0-27ba-4d38-aa62-8177e69f68e5)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_shield)
 
 ## Features
 
@@ -57,12 +56,12 @@ Blocker_Device_Frontend/
 Licenses for third-party resources and 3D models are listed in [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md).
 
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_large)
-
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_shield)
 ---
 
 Contributions and questions are always welcome through Issues and Pull Requests.

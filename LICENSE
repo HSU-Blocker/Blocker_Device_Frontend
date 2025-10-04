@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+THIRD-PARTY COMPONENTS:
+This software includes third-party components with separate licenses.
+See THIRD_PARTY_LICENSES.md for details on third-party licenses and attributions.
+
+IMPORTANT NOTES:
+- GSAP (GreenSock Animation Platform) is used under its Standard License for non-commercial use
+- 3D models are used under Creative Commons Attribution 4.0 International (CC BY 4.0)
+- Other dependencies may have their own licenses - see package.json and node_modules for details

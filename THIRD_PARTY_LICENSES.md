@@ -37,3 +37,15 @@ Each 3D model or external asset included in the `public/` directory has its own 
   - Description: 3D skybox model of Cala D' Arena beach. Free to use, share, and adapt with attribution to the author.
 
 For full license texts and attribution requirements, see the `license.txt` file in each asset's folder under `public/`.
+
+## JavaScript Libraries
+
+- **GSAP (GreenSock Animation Platform)**  
+  - Package: gsap@3.13.0
+  - SPDX-License-Identifier: LicenseRef-GreenSock-Standard
+  - License: Standard License (Non-commercial use)
+  - Website: https://greensock.com/
+  - License URL: https://greensock.com/standard-license/
+  - Description: High-performance animation library for JavaScript
+  - Usage: Used under the Standard License for open-source, non-commercial projects
+  - Note: This project is open-source and non-commercial, qualifying for the free Standard License
