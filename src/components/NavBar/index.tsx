@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
-import { showAnimationState } from '../../store/atoms';
+import { useSetShowAnimation } from '../../store';
 import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
-  const setShowAnimation = useSetRecoilState(showAnimationState);
+  const setShowAnimation = useSetShowAnimation();
 
   const handleHelpClick = () => {
     setShowAnimation(true);

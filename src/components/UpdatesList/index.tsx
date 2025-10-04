@@ -4,8 +4,7 @@ import { deviceApi } from '../../services/deviceApi';
 import Alert from '../shared/Alert';
 import { formatEther } from '../../utils/formatter';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
-import { useSetRecoilState } from 'recoil';
-import { toastsState } from '../../store/atoms';
+import { useAppStore } from '../../store';
 import SyncLoader from 'react-spinners/SyncLoader';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -19,20 +18,8 @@ const UpdatesList: React.FC<UpdatesListProps> = ({ updates, onUpdateInstall, onR
   const [loading, setLoading] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const setToasts = useSetRecoilState(toastsState);
-
-  // Toast 추가 함수 (중복 방지)
-  const addToast = (toast: any) => {
-    setToasts(prev => {
-      if (prev.some(t => t.id === toast.id)) return prev;
-      return [...prev, toast];
-    });
-  };
-
-  // Toast 삭제 함수
-  const removeToast = (id: string) => {
-    setToasts(prev => prev.filter(t => t.id !== id));
-  };
+  
+  const { addToast, removeToast, updateToastProgress } = useAppStore();
 
   const handlePurchaseAndInstall = async (update: Update) => {
     if (!update.price) return;
@@ -60,11 +47,7 @@ const UpdatesList: React.FC<UpdatesListProps> = ({ updates, onUpdateInstall, onR
       purchaseInterval = setInterval(() => {
         purchaseProgress += 2;
         if (purchaseProgress <= 90) {
-          setToasts(prev => prev.map(toast => 
-            toast.id === purchaseToastId 
-              ? { ...toast, progress: purchaseProgress }
-              : toast
-          ));
+          updateToastProgress(purchaseToastId, purchaseProgress);
         }
       }, 100);
       
@@ -105,11 +88,7 @@ const UpdatesList: React.FC<UpdatesListProps> = ({ updates, onUpdateInstall, onR
       installInterval = setInterval(() => {
         installProgress += 2;
         if (installProgress <= 90) {
-          setToasts(prev => prev.map(toast => 
-            toast.id === installToastId 
-              ? { ...toast, progress: installProgress }
-              : toast
-          ));
+          updateToastProgress(installToastId, installProgress);
         }
       }, 100);
 

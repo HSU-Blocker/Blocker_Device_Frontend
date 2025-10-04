@@ -4,8 +4,7 @@ import { VehicleStatus } from '../../types/device';
 import { CubeIcon, BellIcon, MicrophoneIcon } from '@heroicons/react/24/outline';
 import VehicleLabels from './labels';
 import { DeviceInfo } from '../../types/device';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { toastsState, installSuccessTriggerState } from '../../store/atoms';
+import { useAddToast, useInstallSuccessTrigger, useToasts } from '../../store';
 import { deviceApi } from '../../services/deviceApi';
 import MicModal from './MicModal';
 import styles from './Vehicle3DView.module.css';
@@ -62,8 +61,9 @@ const Vehicle3DView: React.FC<Vehicle3DViewProps> = ({ deviceInfo, onRefresh }) 
   const [micOpen, setMicOpen] = useState(false);
 
   const { lastNotification, isConnected } = useWebSocketContext();
-  const setToasts = useSetRecoilState(toastsState);
-  const installSuccessTrigger = useRecoilValue(installSuccessTriggerState);
+  const toasts = useToasts();
+  const addToast = useAddToast();
+  const installSuccessTrigger = useInstallSuccessTrigger();
 
   useEffect(() => {
     if (lastNotification?.type === 'vehicle_status') {
@@ -95,21 +95,18 @@ const Vehicle3DView: React.FC<Vehicle3DViewProps> = ({ deviceInfo, onRefresh }) 
       const latest = updates[0];
       if (!latest?.uid) return;
       const toastId = `update-${latest.uid}`;
-      setToasts(prev => {
-        if (prev.some(t => t.id === toastId)) return prev;
-        return [
-          ...prev,
-          {
-            id: toastId,
-            type: 'new',
-            title: 'New Update',
-            message: `새로운 업데이트 ${latest.uid}가 있습니다.`,
-            progress: 0,
-            showProgress: false,
-            icon: 'bell'
-          }
-        ];
-      });
+      // 중복 토스트 확인
+      if (!toasts.some(t => t.id === toastId)) {
+        addToast({
+          id: toastId,
+          type: 'new',
+          title: 'New Update',
+          message: `새로운 업데이트 ${latest.uid}가 있습니다.`,
+          progress: 0,
+          showProgress: false,
+          icon: 'bell'
+        });
+      }
       // 목록 새로고침 트리거
       onRefresh?.();
     } catch (e) {

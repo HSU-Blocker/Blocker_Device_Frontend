@@ -3,7 +3,7 @@
   --navbar-height: 68px; /* theme.spacing.navbar와 동일 */
 }
 
-@media (min-width: 1538px) { /* Tailwind 기본 2xl 브레이크포인트 */
+@media (min-width: 1536px) { /* Tailwind 기본 2xl 브레이크포인트 */
   :root {
     --navbar-height: 90px; /* theme.spacing.navbar-lg와 동일 */
   }
@@ -552,7 +552,7 @@ body {
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1538px) {
   .toast-box {
     width: 390px;
     font-size: 0.8rem;
@@ -570,7 +570,7 @@ body {
   font-size: 0.98em;
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1538px) {
   .toast-box .toast-title {
     font-size: 1.35em;
   }

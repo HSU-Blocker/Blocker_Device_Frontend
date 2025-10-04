@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -25,12 +26,12 @@
     "react-router-dom": "^7.5.3",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",
-    "recoil": "^0.7.7",
     "socket.io-client": "^4.8.1",
     "styled-components": "^6.1.17",
     "three": "^0.176.0",
     "three-stdlib": "^2.36.0",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",

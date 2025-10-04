@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { deviceApi } from '../services/deviceApi';
-import { toastsState, updatesRefreshTriggerState } from '../store/atoms';
+import { useAddToast, useUpdatesRefreshTrigger } from '../store';
 import UpdatesList from '../components/UpdatesList';
 import Vehicle3DView from '../components/Vehicle3DView';
 import DeviceInfo from '../components/DeviceInfo';
@@ -17,8 +16,8 @@ const Dashboard: React.FC = () => {
     lastUpdate: undefined
   });
   const [updates, setUpdates] = useState<Update[]>([]);
-  const setToasts = useSetRecoilState(toastsState);
-  const refreshTrigger = useRecoilValue(updatesRefreshTriggerState);
+  const addToast = useAddToast();
+  const refreshTrigger = useUpdatesRefreshTrigger();
 
   const loadDeviceInfo = async () => {
     try {
@@ -127,13 +126,13 @@ const Dashboard: React.FC = () => {
       setUpdates(updatesData);
     } catch (error) {
       console.error('Failed to refresh updates:', error);
-      setToasts(prev => [...prev, {
+      addToast({
         id: `error-refresh-${Date.now()}`,
         type: 'default',
         title: '오류',
         message: '업데이트 목록을 새로고침하는데 실패했습니다',
         progress: 0
-      }]);
+      });
     }
   };
 

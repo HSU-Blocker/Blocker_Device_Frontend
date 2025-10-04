@@ -1,13 +1,12 @@
 import { useState, useCallback } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { showAnimationState } from '../../store/atoms';
+import { useSetShowAnimation } from '../../store';
 import { Scene } from './Scene';
 
 export function UpdateAnimation() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [showCarView, setShowCarView] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
-  const setShowAnimation = useSetRecoilState(showAnimationState);
+  const setShowAnimation = useSetShowAnimation();
   const [showBlockchainInfo, setShowBlockchainInfo] = useState(false);
   const [returnedToInitial, setReturnedToInitial] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
