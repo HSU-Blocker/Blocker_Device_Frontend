@@ -25,7 +25,7 @@ Blocker Device Frontend is an open-source web app for managing and monitoring Io
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) Core framework for building interactive UIs and rendering pages.
 - ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) Enables type-safe component development and API integration.
 - ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E) Provides a fast development server and lightning-quick build process.
-- ![Recoil](https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white) Manages global state such as device status and animation steps.
+- ![Zustand](https://img.shields.io/badge/Zustand-FF6B35?style=for-the-badge&logo=zustand&logoColor=white) Manages global state such as device status and animation steps.
 - ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white) Powers 3D device visualization and update progress animations.
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) Provides a utility-first approach to styling all UI components and layouts.
 - ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white) Enables real-time notifications for device and blockchain events.
