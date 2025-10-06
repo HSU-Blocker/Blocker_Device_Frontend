@@ -10,18 +10,18 @@ const DeviceInfo: React.FC<DeviceInfoProps> = ({ info }) => {
   console.log('DeviceInfo info:', info);
   if (!info) {
     return (
-      <div className="card flex flex-col bg-[#fafafa]/80 rounded-md shadow-sm p-6 w-[400px] min-h-[200px] animate-pulse">
-        <div className="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+      <div className="card flex flex-col bg-[#fafafa]/80 rounded-md shadow-xs p-6 w-[400px] min-h-[200px] animate-pulse">
+        <div className="h-4 bg-gray-200 rounded-sm w-1/4 mb-4"></div>
         <div className="card-content space-y-3">
-          <div className="h-3 bg-gray-200 rounded"></div>
-          <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+          <div className="h-3 bg-gray-200 rounded-sm"></div>
+          <div className="h-3 bg-gray-200 rounded-sm w-5/6"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="card flex flex-col bg-[#fafafa]/80 rounded-md shadow-sm p-6">
+    <div className="card flex flex-col bg-[#fafafa]/80 rounded-md shadow-xs p-6">
       <div className="card-title text-xl font-semibold text-[#2e2e2e] mb-4">
         Device Information
       </div>

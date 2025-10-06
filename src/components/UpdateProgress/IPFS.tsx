@@ -28,7 +28,7 @@ export function IPFS({
 
   // IPFS 노드 생성
   const nodes = useMemo(() => {
-    const nodes: JSX.Element[] = [];
+    const nodes: React.ReactElement[] = [];
 
     for (let i = 0; i < totalNodes; i++) {
       const angle = (i / totalNodes) * Math.PI * 2;

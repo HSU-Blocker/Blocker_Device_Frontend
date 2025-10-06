@@ -346,7 +346,7 @@ const MicModal: React.FC<MicModalProps> = ({ open, onClose }) => {
   if (!open) return null;
   return (
     <div 
-      className="fixed inset-0 z-[110] flex items-center justify-center bg-black/20"
+      className="fixed inset-0 z-110 flex items-center justify-center bg-black/20"
       onClick={handleClose}
     >
       <div 
@@ -391,7 +391,7 @@ const MicModal: React.FC<MicModalProps> = ({ open, onClose }) => {
                     type="text"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-all duration-200 ${
+                    className={`w-full px-3 py-2 border rounded-md focus:outline-hidden focus:ring-2 transition-all duration-200 ${
                       isInputShaking 
                         ? 'border-red-400 focus:ring-red-500 animate-pulse' 
                         : 'border-gray-300 focus:ring-blue-500'

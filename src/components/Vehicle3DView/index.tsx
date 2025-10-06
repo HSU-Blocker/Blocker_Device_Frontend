@@ -7,7 +7,7 @@ import { DeviceInfo } from '../../types/device';
 import { useAddToast, useInstallSuccessTrigger, useToasts } from '../../store';
 import { deviceApi } from '../../services/deviceApi';
 import MicModal from './MicModal';
-import styles from './Vehicle3DView.module.css';
+// import styles from './Vehicle3DView.module.css';
 
 interface UpdateLabelInfo {
   uid?: string;
@@ -131,32 +131,32 @@ const Vehicle3DView: React.FC<Vehicle3DViewProps> = ({ deviceInfo, onRefresh }) 
   }, [handleAlarmClick]);
 
   return (
-    <div className={styles.mainContent}>
-      <div className={styles.statusBar}>
-        <div className={styles.statusRow}>
-          <div className={styles.gear}>
+    <div className="mainContent">
+      <div className="statusBar">
+        <div className="statusRow">
+          <div className="gear">
             <span className={installedHighlight ? 'text-black' : 'text-red-500'}>P</span>{' '}
             R N{' '}
             <span className={installedHighlight ? 'text-red-500' : 'text-black'}>D</span>
           </div>
-          <div className={styles.battery}>
-            <div className={styles.batteryBar}>
+          <div className="battery">
+            <div className="batteryBar">
               <div 
-                className={styles.batteryLevel}
+                className="batteryLevel"
                 style={{ width: `${(vehicleStatus?.batteryLevel || 0) * 0.75}px` }}
               ></div>
             </div>
-            <span className={styles.batteryPercent}>{vehicleStatus?.batteryLevel || 0}%</span>
+            <span className="batteryPercent">{vehicleStatus?.batteryLevel || 0}%</span>
           </div>
         </div>
-        <div className={`${styles.statusRow} ${styles.alarmColumn}`}>
-          <div className={`${styles.blockchainStatus} blockchain-status flex items-center gap-3 pl-2 pr-6 py-2 bg-gray-100 rounded-full`}>
+        <div className={`statusRow alarmColumn`}>
+          <div className={`blockchain-status flex items-center gap-3 pl-2 pr-6 py-2 bg-gray-100 rounded-full`}>
             <CubeIcon className={`w-6 h-6 ${isConnected ? 'text-green-500' : 'text-red-500'}`} />
             <span className={`blockchain-text font-semibold ${isConnected ? 'text-gray-800' : 'text-gray-800'}`}>
               {isConnected ? 'Connected' : 'Disconnected'}
             </span>
           </div>
-          <div className={`${styles.alarm} pl-1 flex gap-4`}>
+          <div className={`alarms pl-1 flex gap-4`}>
             <BellIcon className="w-7 h-7 text-gray-400 cursor-pointer" onClick={handleAlarmClick} />
             <MicrophoneIcon className="w-7 h-7 text-gray-400 cursor-pointer" onClick={() => setMicOpen(true)} />
           </div>
@@ -164,11 +164,11 @@ const Vehicle3DView: React.FC<Vehicle3DViewProps> = ({ deviceInfo, onRefresh }) 
       </div>
       <MicModal open={micOpen} onClose={() => setMicOpen(false)} />
 
-      <div className={styles.carArea}>
+      <div className="carArea">
         <img
           src="/automobile.svg"
           alt="Car"
-          className={styles.carImage}
+          className="carImage"
         />
         <VehicleLabels 
           updateLabelInfo={updateLabelInfo}

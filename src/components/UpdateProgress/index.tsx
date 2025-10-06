@@ -24,7 +24,7 @@ const UpdateProgress: React.FC<UpdateProgressProps> = ({ updates }) => {
   };
 
   return (
-    <div className="card bg-[#fafafa] rounded-md shadow-sm p-6 w-[400px] min-h-[200px]">
+    <div className="card bg-[#fafafa] rounded-md shadow-xs p-6 w-[400px] min-h-[200px]">
       <div className="card-title text-lg font-semibold text-[#2e2e2e] mb-4">
         Available Updates
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { GLTF } from 'three-stdlib';
@@ -23,7 +23,7 @@ export default function SkyModel({
   position = [0, 0, 0],
   rotation = [0, 0, 0]
 }: SkyModelProps) {
-  const { nodes, materials } = useGLTF('/skybox_beach_cala_d_arena/scene.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/skybox_beach_cala_d_arena/scene.glb') as unknown as GLTFResult;
   
   useEffect(() => {
     if (materials['Material.001']) {

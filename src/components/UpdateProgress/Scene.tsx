@@ -399,7 +399,7 @@ export function Scene({
   const [closeupStage, setCloseupStage] = useState<'none' | 'hash' | 'cpabe' | 'final'>('none');
   const cameraControllerRef = useRef<{
     returnToInitialView: () => void;
-  }>();
+  }>(null);
 
   // 상위 컴포넌트의 검증 상태 변경 시 현재 상태 업데이트
   useEffect(() => {

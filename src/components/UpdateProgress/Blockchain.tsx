@@ -1,4 +1,4 @@
-import { useRef, useMemo, useEffect, useState } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -105,8 +105,8 @@ export function Blockchain({
 
   // 블록과 연결선 생성
   const { blocks, lines, lastBlockPosition } = useMemo(() => {
-    const blocks: JSX.Element[] = [];
-    const lines: JSX.Element[] = [];
+    const blocks: React.ReactElement[] = [];
+    const lines: React.ReactElement[] = [];
     
     // 12번 블록의 위치 계산 (11번 블록 다음 위치)
     const lastIndex = totalBlocks - 1;

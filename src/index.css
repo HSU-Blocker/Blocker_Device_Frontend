@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --spacing-navbar: 68px;
+  --spacing-navbar-lg: 90px;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {
@@ -21,5 +42,216 @@
 
   button {
     @apply rounded-lg border border-transparent px-4 py-2 text-base font-medium transition-all duration-200 cursor-pointer;
+  }
+}
+
+/* 커스텀 클래스 */
+@layer components {
+  /* Navbar 전체 컨테이너 */
+  .navbar {
+    @apply fixed top-0 left-0 w-screen z-[100] bg-[#fafafa] border-b border-[#eff0ef] 
+      flex items-center justify-between px-0 box-border pt-6 pb-4;
+    @apply h-navbar 2xl:h-navbar-lg;
+  }
+
+  /* 로고 텍스트 */
+  .logo {
+    @apply font-bold text-black flex items-center -mt-2;
+    margin-left: 5.5rem; 
+    font-size: 26px;
+  }
+
+  @media (min-width: 1500px) {
+    .logo {
+      margin-left: 5rem; 
+      font-size: 30px;
+    }
+  }
+
+  /* 로고 링크 */
+  .logoLink {
+    @apply no-underline text-black font-bold mt-1;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  @media (min-width: 1500px) {
+    .logoLink {
+      font-size: 30px;
+    }
+  }
+
+  /* 네비게이션 링크 컨테이너 */
+  .navLinks {
+    @apply flex gap-8 items-center;
+    margin-right: 5.5rem; 
+  }
+
+  @media (min-width: 1500px) {
+    .navLinks {
+      margin-right: 5rem;
+    }
+  }
+
+  /* 개별 네비게이션 링크 */
+  .navLink {
+    @apply font-medium text-black flex items-center -mt-1 hover:border-b-2 hover:border-black 
+      transition-all no-underline;
+    font-size: 18px;
+  }
+
+  @media (min-width: 1500px) {
+    .navLink {
+      font-size: 18px;
+    }
+  }
+
+  /* 도움말 버튼 */
+  .helpBtn {
+    @apply bg-black text-white rounded-[20px] px-[18px] py-[7px] font-bold flex items-center -mt-2 mr-4;
+    font-size: 16px;
+  }
+
+  @media (min-width: 1500px) {
+    .helpBtn {
+      font-size: 18px;
+    }
+  }
+
+  //////////////////////////
+
+  /* 메인 컨테이너 */
+  .mainContent {
+    @apply flex flex-col items-center pt-[80px];
+  }
+
+  /* 상태 바 */
+  .statusBar {
+    @apply w-full flex flex-col gap-4 mt-8 mb-6 pl-[75px] pr-[40px] box-border;
+    top: 80px;
+    z-index: 2;
+    font-size: 1.22em;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 1538px) {
+    .statusBar {
+      @apply mt-30;
+    }
+  }
+
+  /* 상태 행 */
+  .statusRow {
+    @apply flex items-start gap-6;
+  }
+
+  .statusRow.alarmColumn {
+    @apply flex-col items-start gap-4 ml-0;
+  }
+
+  /* 기어 상태 */
+  .gear {
+    @apply font-bold text-[16px] text-[#171717];
+    letter-spacing: -0.13px;
+  }
+
+  /* 배터리 상태 */
+  .battery {
+    @apply flex items-center gap-[10px];
+  }
+
+  .batteryBar {
+    @apply relative overflow-hidden;
+    width: 48px;
+    height: 18px;
+    background: #bfc0c0;
+    border: 1.5px solid #6a6a6a;
+    border-radius: 3px;
+  }
+
+  .batteryLevel {
+    @apply absolute;
+    left: 3px;
+    top: 0px;
+    height: 22px;
+    background: #414141;
+    border-radius: 2px;
+  }
+
+  .batteryPercent {
+    @apply text-[15px] font-semibold text-[#414141];
+  }
+
+  .blockchainStatus {
+    @apply origin-left;
+    transform: scale(0.75);
+  }
+
+  .alarm {
+    @apply flex items-center justify-center;
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    font-size: 1.5em;
+  }
+
+  /* 차량 영역 */
+  .carArea {
+    @apply relative mx-auto my-5 px-4;
+    min-height: 240px;
+    max-width: 520px;
+    z-index: 1;
+    margin-top: -40px;
+  }
+
+  /* 차량 이미지 */
+  .carImage {
+    @apply block mx-auto w-full h-auto object-contain;
+  }
+
+  /* 차량 라벨 컨테이너 */
+  .labelContainer {
+    @apply absolute inset-0 pointer-events-none;
+  }
+
+  /* 왼쪽 BounceLoader */
+  .doorLabel {
+    @apply absolute flex flex-col items-center pointer-events-auto;
+    left: 15%;
+    top: 13%;
+  }
+
+  /* 오른쪽 BounceLoader */
+  .engineLabel {
+    @apply absolute flex flex-col items-center pointer-events-auto;
+    left: 55%;
+    bottom: 98%;
+  }
+
+  /* 미디어 쿼리 - 태블릿 (768px 이상) */
+  @media (min-width: 768px) {
+    .blockchainStatus { transform: scale(0.85); }
+    .carArea { min-height: 280px; max-width: 560px; margin: -50px auto 24px; padding: 0 20px; }
+  }
+
+  /* 데스크톱 (1024px 이상) */
+  @media (min-width: 1024px) {
+    .blockchainStatus { transform: scale(0.9); }
+    .carArea { top: 27vh; transform: translateY(-50%); min-height: 320px; max-width: 780px; padding: 0 24px; }
+    .carImage { height: 70vh; }
+
+    .doorLabel { left: 16%; top: 13%; }
+    .engineLabel { left: 55%; bottom: 98%; }
+  }
+
+  /* 대형 데스크톱 (1538px 이상) */
+  @media (min-width: 1538px) {
+    .mainContent { padding-top: 100px; }
+    .blockchainStatus { transform: scale(1); }
+
+    .carArea { top: 23vh; transform: translateY(-50%); min-height: 360px; width: 780px; max-width: none; padding: 0; }
+    .doorLabel { left: 15%; top: 16%; }
+    .engineLabel { left: 55%; bottom: 96%; }
   }
 }

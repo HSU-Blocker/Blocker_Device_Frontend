@@ -23,7 +23,7 @@ export const UpdateHistoryList: React.FC<UpdateHistoryListProps> = ({
 
     if (isLoading) {
         return (
-            <div className="min-h-[calc(100vh-120px)] bg-white shadow rounded-lg p-6 flex items-center justify-center">
+            <div className="min-h-[calc(100vh-120px)] bg-white shadow-sm rounded-lg p-6 flex items-center justify-center">
                 <Loading />
             </div>
         );
@@ -37,7 +37,7 @@ export const UpdateHistoryList: React.FC<UpdateHistoryListProps> = ({
                     <button 
                         onClick={onRefresh}
                         disabled={isRefreshing}
-                        className={`p-1.5 rounded-full bg-gray-50 shadow-sm border border-gray-200 hover:bg-gray-100 transition-all ${isRefreshing ? 'opacity-50' : ''}`}
+                        className={`p-1.5 rounded-full bg-gray-50 shadow-xs border border-gray-200 hover:bg-gray-100 transition-all ${isRefreshing ? 'opacity-50' : ''}`}
                         title="업데이트 이력 새로고침"
                     >
                         <ArrowPathIcon className={`w-4 h-4 text-gray-600 ${isRefreshing ? 'animate-spin' : ''}`} />
@@ -51,7 +51,7 @@ export const UpdateHistoryList: React.FC<UpdateHistoryListProps> = ({
                     <p className="text-gray-600">업데이트 이력이 없습니다.</p>
                 </div>
             ) : (
-                <div className="overflow-hidden bg-white rounded-lg shadow">
+                <div className="overflow-hidden bg-white rounded-lg shadow-sm">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                             <tr>

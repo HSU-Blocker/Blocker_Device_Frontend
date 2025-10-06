@@ -35,7 +35,7 @@ export default function GoldKey({
   position = [0, 1.5, 0], // 씬 중앙에 띄움
   rotation = [0, 0, 0]
 }: GoldKeyProps) {
-  const { nodes, materials } = useGLTF('/old_gold_key/scene-transformed.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/old_gold_key/scene-transformed.glb') as unknown as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
   const [showNewKey, setShowNewKey] = useState(false);
 

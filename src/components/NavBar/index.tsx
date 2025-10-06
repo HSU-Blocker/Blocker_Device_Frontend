@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSetShowAnimation } from '../../store';
-import styles from './NavBar.module.css';
+// import styles from './NavBar.module.css';
 
 const NavBar: React.FC = () => {
   const setShowAnimation = useSetShowAnimation();
@@ -11,11 +11,11 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.logo}>
+    <div className="navbar">
+      <div className="logo">
         <Link
           to="/"
-          className={styles.logoLink}
+          className="logoLink"
           style={{ fontSize: 30, fontWeight: 'bold' }}
           onMouseOver={e => e.currentTarget.style.color = '#000'}
           onMouseOut={e => e.currentTarget.style.color = '#000'}
@@ -23,17 +23,17 @@ const NavBar: React.FC = () => {
           Blocker
         </Link>
       </div>
-      <div className={styles.navLinks}>
-        <Link to="/" className={styles.navLink}>Home</Link>
-        <Link to="/history" className={styles.navLink}>History</Link>
+      <div className="navLinks">
+        <Link to="/" className="navLink">Home</Link>
+        <Link to="/history" className="navLink">History</Link>
         <div className="flex items-center gap-6">
           <button
-            className={styles.helpBtn}
+            className="helpBtn"
             onClick={handleHelpClick}
           >
             Help
           </button>
-          {/* <button className={styles.settingsBtn}>
+          {/* <button className="settingsBtn">
             ⚙️
           </button> */}
         </div>

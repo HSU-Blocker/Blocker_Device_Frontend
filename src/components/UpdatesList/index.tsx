@@ -151,7 +151,7 @@ const UpdatesList: React.FC<UpdatesListProps> = ({ updates, onUpdateInstall, onR
   };
 
   return (
-    <div className="card updates-list-card flex flex-col bg-[#fafafa]/80 rounded-md shadow-sm p-6">
+    <div className="card updates-list-card flex flex-col bg-[#fafafa]/80 rounded-md shadow-xs p-6">
       <div className="card-header flex justify-between items-center mb-1">
         <div className="card-title text-xl font-semibold text-[#2e2e2e]">
           Available Updates
