@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Blocker
+Copyright (c) 2025 HSU-Blocker
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,21 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-THIRD-PARTY COMPONENTS:
-This software includes third-party components with separate licenses.
-See THIRD_PARTY_LICENSES.md for details on third-party licenses and attributions.
-
-INCLUDED OPEN-SOURCE LICENSES:
-This software includes components licensed under the following open-source licenses:
-- Apache License 2.0
-- BSD 2-Clause License
-- BSD 3-Clause License
-- ISC License
-- Blue Oak Model License 1.0.0
-- Python License 2.0
-
-IMPORTANT NOTES:
-- GSAP (GreenSock Animation Platform) is used under its Standard License for non-commercial use
-- 3D models are used under Creative Commons Attribution 4.0 International (CC BY 4.0)
-- Other dependencies may have their own licenses - see package.json and node_modules for details
