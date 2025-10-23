@@ -60,8 +60,6 @@ Licenses for third-party resources and 3D models are listed in [THIRD_PARTY_LICE
 
 This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_large)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_shield)
 ---
 
 Contributions and questions are always welcome through Issues and Pull Requests.
@@ -71,3 +69,5 @@ For detailed contribution guidelines, please refer to the [Contribution Guide](h
 
 Contributions and questions are welcome via Issues and Pull Requests.
 For more information about the overall project, visit the [HSU-Blocker GitHub organization](https://github.com/HSU-Blocker).
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHSU-Blocker%2FBlocker_Device_Frontend?ref=badge_large)
